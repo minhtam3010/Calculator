@@ -1,0 +1,198 @@
+.res {
+    color: white;
+    background-color: black;
+    padding: 15px;
+}
+
+.number {
+    display: grid;
+    grid-template-areas: 
+    "clear clear del div"
+    "num-7 num-8 num-9 mul"
+    "num-4 num-5 num-6 minus"
+    "num-1 num-2 num-3 plus"
+    "num-0 num-0 num-0 equal";
+    margin: 0 auto;
+}
+
+.equal {
+    grid-area: equal;
+    padding: 10px;
+}
+
+.plus {
+    grid-area: plus;
+    padding: 10px;
+}
+
+.minus {
+    grid-area: minus;
+    padding: 10px;
+}
+
+.divide {
+    grid-area: div;
+    padding: 10px;
+}
+
+.multiplication {
+    grid-area: mul;
+    padding: 10px;
+}
+
+.delete {
+    grid-area: del;
+}
+
+.clear {
+    grid-area: clear;
+}
+
+.num-0 {
+    grid-area: num-0;
+}
+
+.num-1 {
+    grid-area: num-1;
+}
+
+.num-2 {
+    grid-area: num-2;
+}
+
+.num-3 {
+    grid-area: num-3;
+}
+
+.num-4 {
+    grid-area: num-4;
+}
+
+.num-5 {
+    grid-area: num-5;
+}
+
+.num-6 {
+    grid-area: num-6;
+}
+
+.num-7 {
+    grid-area: num-7;
+}
+
+.num-8 {
+    grid-area: num-8;
+}
+
+.num-9 {
+    grid-area: num-9;
+}
+
+.equal:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.plus:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.minus:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.multiplication:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.divide:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.delete:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.clear:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-0:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-1:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-2:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-3:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-4:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.equal:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-5:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-6:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-7:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-8:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
+.num-9:hover {
+    color: white;
+    background-color: brown;
+    text-decoration: solid;
+}
+
