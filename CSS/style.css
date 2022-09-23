@@ -1,12 +1,18 @@
+* {
+    box-sizing: border-box;
+}
 body {
-    width: 500px;
+    width: 200px;
 }
 
 .res {
     color: white;
     background-color: black;
     padding: 15px;
+    /* width: 170px;
+    height: 182.266px; */
     text-align: right;
+    border: 0;
 }
 
 .number {
@@ -23,26 +29,31 @@ body {
 .equal {
     grid-area: equal;
     padding: 10px;
+    background-color: #df974c;
 }
 
 .plus {
     grid-area: plus;
     padding: 10px;
+    background-color: #df974c;
 }
 
 .minus {
     grid-area: minus;
     padding: 10px;
+    background-color: #df974c;
 }
 
 .divide {
     grid-area: div;
     padding: 10px;
+    background-color: #df974c;
 }
 
 .multiplication {
     grid-area: mul;
     padding: 10px;
+    background-color: #df974c;
 }
 
 .del {

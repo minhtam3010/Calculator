@@ -7,11 +7,8 @@ let clicked_equal = false
 const printRes = document.querySelector(".res")
 let operate1 = ""
 let operate2 = ""
+
 function buttonHandle(value) {
-    if (clicked_equal) {
-        printRes.innerText = "0"
-        clicked_equal = false
-    }
     if (isNaN(Number.parseInt(value))) {
         handleSymbol(value)
     } else {
@@ -20,6 +17,12 @@ function buttonHandle(value) {
 }
 
 function handleNumber(number) {
+    if (!(clicked_plus || clicked_minus || clicked_mul || clicked_div) && clicked_equal && operate1 != "0") {
+        operate1 = "0"
+        printRes.innerText = operate1
+        clicked_plus = clicked_minus = clicked_mul = clicked_div = false
+        clicked_equal = false
+    }
     if (printRes.innerText == "0") {
         printRes.innerText = number
     } else {
@@ -28,59 +31,65 @@ function handleNumber(number) {
 }
 
 function handleSymbol(symbol) {
-    if (symbol == "+") {
-        operate1 = printRes.innerText
-        printRes.innerText = "0"
-        clicked_plus = true
-        clicked = true
-
-    }else if (symbol == "-") {
-        operate1 = printRes.innerText
-        printRes.innerText = "0"
-        clicked_minus = true
-        clicked = true
-    }else if (symbol == "*"){
-        operate1 = printRes.innerText
-        printRes.innerText = "0"
-        clicked_mul = true
-        clicked = true
-    }else if (symbol == "/"){
-        operate1 = printRes.innerText
-        printRes.innerText = "0"
-        clicked_div = true
-        clicked = true
-    }else if(symbol == "=") {
-        if (printRes.innerText == "0") {
-            operate2 = ""
-        } else {
-            operate2 = printRes.innerText
-        }
-        if (operate2 == "") {
-            printRes.innerText = "Not enough parameter to operate"
-        } else {
-            if (clicked_plus) {
-                printRes.innerText = String(parseInt(operate1) + parseInt(printRes.innerText))
-                clicked_plus = false
-            } else if (clicked_minus) {
-                printRes.innerText = String(parseInt(operate1) - parseInt(printRes.innerText))
-                clicked_minus = false
-            } else if (clicked_mul) {
-                printRes.innerText = String(parseInt(operate1) * parseInt(printRes.innerText))
-                clicked_mul = false
-            } else if (clicked_div) {
-                printRes.innerText = String(parseInt(operate1) / parseInt(printRes.innerText))
-                clicked_div = false
+    switch (symbol) {
+        case "+":
+            operate1 = printRes.innerText
+            printRes.innerText = "0"
+            clicked_plus = true
+            clicked = true
+            break
+        case "-":
+            operate1 = printRes.innerText
+            printRes.innerText = "0"
+            clicked_minus = true
+            clicked = true
+            break
+        case "*":
+            operate1 = printRes.innerText
+            printRes.innerText = "0"
+            clicked_mul = true
+            clicked = true
+            break
+        case "/":
+            operate1 = printRes.innerText
+            printRes.innerText = "0"
+            clicked_div = true
+            clicked = true
+            break
+        case "=":
+            if (printRes.innerText == "0") {
+                operate2 = ""
             } else {
-                printRes.innerText = "Do not have any behavior to operate"
+                operate2 = printRes.innerText
             }
-            clicked_equal = true
-        }
-    }else if (symbol == "C") {
-        printRes.innerText = "0"
-        operate1 = ""
-        operate2 = ""
-    } else if (symbol == "del") {
-        if (printRes.innerText.length == 1) {
+            if (operate2 == "") {
+                printRes.innerText = "Not enough parameter to operate"
+            } else {
+                if (clicked_plus) {
+                    printRes.innerText = String(parseInt(operate1) + parseInt(printRes.innerText))
+                    clicked_plus = false
+                } else if (clicked_minus) {
+                    printRes.innerText = String(parseInt(operate1) - parseInt(printRes.innerText))
+                    clicked_minus = false
+                } else if (clicked_mul) {
+                    printRes.innerText = String(parseInt(operate1) * parseInt(printRes.innerText))
+                    clicked_mul = false
+                } else if (clicked_div) {
+                    printRes.innerText = String(parseInt(operate1) / parseInt(printRes.innerText))
+                    clicked_div = false
+                } else {
+                    printRes.innerText = "Do not have any behavior to operate"
+                }
+                clicked_equal = true
+            }
+            break
+        case "C":
+            printRes.innerText = "0"
+            operate1 = ""
+            operate2 = ""
+            break
+        case "←":
+            if (printRes.innerText.length == 1) {
                 printRes.innerText = "0"
                 if (clicked) {
                     operate2 = ""
@@ -96,6 +105,7 @@ function handleSymbol(symbol) {
                 operate1 = printRes.innerText
             }
         }
+        break
     }
 }
 
